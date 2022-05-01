@@ -1,0 +1,11 @@
+configuration { 
+  display-drun: "Applications ";
+  drun-display-format: "{icon} {name}";
+  font: "Manjari 20";
+  modi: "run,drun"; 
+  show-icons: true;
+  icon-theme: "Zafiro-icons-Dark";
+}
+
+
+@theme "/home/devarsh/.config/rofi/theme.rasi"
