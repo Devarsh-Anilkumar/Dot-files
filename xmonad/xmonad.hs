@@ -67,8 +67,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
+    -- launch Rofi
+    , ((modm,               xK_p     ), spawn "rofi -show drun")
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -260,7 +260,6 @@ myStartupHook = do
 
         spawnOnce "nitrogen --restore &"                           -- Draw the wallpaper
         spawnOnce "compton &"                                      -- Compositor
-        spawnOnce "ulauncher &"                                    -- Launch Ulauncher 
         spawn ("sleep 2 && /usr/bin/trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x0a1a2a --height 18 &")                     --Launch Trayer(System tray)     
         spawnOnce "nm-applet &"                                    -- Launch n(etwork) m(anager)-applet
         spawnOnce "volumeicon &"                                   -- Launch volumeicon
