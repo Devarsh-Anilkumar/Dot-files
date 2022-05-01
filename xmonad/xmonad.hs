@@ -79,6 +79,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch GUI file manager (pcmanfm)
     , ((modm .|. shiftMask, xK_f     ), spawn "pcmanfm")
 
+   -- launch emacs
+    , ((modm,               xK_d     ), spawn "emacs")
+
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
 
