@@ -79,8 +79,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch GUI file manager (pcmanfm)
     , ((modm .|. shiftMask, xK_f     ), spawn "pcmanfm")
 
-   -- launch emacs
-    , ((modm,               xK_d     ), spawn "emacs")
+    -- launch emacs client
+    , ((modm,               xK_d     ), spawn "emacsclient -c -a 'emacs'")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
@@ -266,6 +266,7 @@ myStartupHook = do
         spawn ("sleep 2 && /usr/bin/trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x0a1a2a --height 18 &")                     --Launch Trayer(System tray)     
         spawnOnce "nm-applet &"                                    -- Launch n(etwork) m(anager)-applet
         spawnOnce "volumeicon &"                                   -- Launch volumeicon
+        spawnOnce "/usr/bin/emacs --daemon"                        -- Launch the emacs daemon at startup
         spawnOnce "xrandr --output HDMI-A-0 --set TearFree on &"   -- Fix screen tearing
 
 ------------------------------------------------------------------------
