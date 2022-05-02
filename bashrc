@@ -123,12 +123,13 @@ fi
   alias up='sudo apt update'
   alias ug='sudo apt upgrade'
   alias autore='sudo apt autoremove'
+  
+#Paths
 
   # Doom Emacs
 
-  alias doom-sync='~/.emacs.d/bin/doom sync'
-  alias doom-upgrade='~/.emacs.d/bin/doom upgrade'
-
+  export PATH="$HOME/.emacs.d/bin:$PATH"  
+  
 #Prompt
 
 PS1="[\w] $ "
