@@ -124,6 +124,11 @@ fi
   alias ug='sudo apt upgrade'
   alias autore='sudo apt autoremove'
   
+  #Doom Emacs
+
+  alias emacs='emacsclient -c -a 'emacs''
+  
+  
 #Paths
 
   # Doom Emacs
