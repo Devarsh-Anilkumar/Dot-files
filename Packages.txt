@@ -1,28 +1,35 @@
-_________________________________________________________________________________________________________________
-| #  |  Package name                                 |___________________________________________________________|
-| 1  |  xmonad ;  xmonad-contrib                     | apt/pacman                                                |
-| 2  |  ani-cli                                      | github  https://github.com/pystardust/ani-cli             |
-| 3  |  xmobar                                       | apt/pacman                                                |
-| 4  |  emacs                                        | apt/pacman                                                |
-| 5  |  doom emacs                                   | github https://github.com/doomemacs/doomemacs             |
-| 6  |  pcman-fm                                     | apt/pacman                                                |
-| 7  |  rofi                                         | apt/pacman                                                |
-| 8  |  dmenu                                        | apt/pacman                                                |
-| 9  |  kitty                                        | apt/pacman                                                |
-| 10 |  ranger                                       | apt/pacman                                                |
-| 11 |  git                                          | apt/pacman                                                |
-| 12 |  lxappearance                                 | apt/pacman                                                |
-| 13 |  qt5 settings                                 | apt/pacman                                                |
-| 14 |  neofetch                                     | apt/pacman                                                |
-| 15 |  htop                                         | apt/pacman                                                |
-| 16 |  gimp                                         | apt/pacman                                                |
-| 17 |  mpv                                          | apt/pacman                                                |
-| 18 |  firefox                                      | apt/pacman                                                |
-| 19 |  nitrogen                                     | apt/pacman                                                |
-| 20 |  obs                                          | apt/pacman                                                |
-| 21 |  vs-code                                      | apt/pacman                                                |
-| 22 |  vim                                          | apt/pacman                                                |
-| 23 | libre-offoce                                  | apt/pacman                                                |
-| 24 | light-dm                                      | apt/pacman                                                |
-| 25 | cmatrix                                       | apt/pacman                                                |
-|____|_______________________________________________|___________________________________________________________|
+
+
+
+               _________________________________________________________________________________________________________________
+               | #  |  Package name                                 |___________________________________________________________|
+               | 1  |  xmonad ;  xmonad-contrib                     | apt/pacman                                                |
+               | 2  |  ani-cli                                      | github  https://github.com/pystardust/ani-cli             |
+               | 3  |  xmobar                                       | apt/pacman                                                |
+               | 4  |  emacs                                        | apt/pacman                                                |
+               | 5  |  doom emacs                                   | github https://github.com/doomemacs/doomemacs             |
+               | 6  |  pcman-fm                                     | apt/pacman                                                |
+               | 7  |  rofi                                         | apt/pacman                                                |
+               | 8  |  dmenu                                        | apt/pacman                                                |
+               | 9  |  kitty                                        | apt/pacman                                                |
+               | 10 |  ranger                                       | apt/pacman                                                |
+               | 11 |  git                                          | apt/pacman                                                |
+               | 12 |  lxappearance                                 | apt/pacman                                                |
+               | 13 |  qt5 settings                                 | apt/pacman                                                |
+               | 14 |  neofetch                                     | apt/pacman                                                |
+               | 15 |  htop                                         | apt/pacman                                                |
+               | 16 |  gimp                                         | apt/pacman                                                |
+               | 17 |  mpv                                          | apt/pacman                                                |
+               | 18 |  firefox                                      | apt/pacman                                                |
+               | 19 |  nitrogen                                     | apt/pacman                                                |
+               | 20 |  obs                                          | apt/pacman                                                |
+               | 21 |  vs-code                                      | apt/pacman                                                |
+               | 22 |  vim                                          | apt/pacman                                                |
+               | 23 | libre-offoce                                  | apt/pacman                                                |
+               | 24 | light-dm                                      | apt/pacman                                                |
+               | 25 | cmatrix                                       | apt/pacman                                                |
+               |____|_______________________________________________|___________________________________________________________|
+
+
+
+
