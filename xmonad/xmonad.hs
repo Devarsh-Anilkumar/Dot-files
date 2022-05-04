@@ -74,7 +74,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_p     ), spawn "rofi -show drun")
 
     -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
     -- launch browser (Firefox)
     , ((modm,               xK_f     ), spawn "firefox") 
@@ -139,7 +139,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
-    -- Quit xmonad
+ -- Run script (powermenu)
+    , ((modm .|. shiftMask, xK_p     ), spawn "/home/devarsh/Scripts/powermenu/powermenu.sh")
+ 
+ -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
@@ -198,7 +201,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (noBorders Full ||| Grid ||| tiled ||| Mirror tiled)
+myLayout = smartSpacing 10
+  $avoidStruts (noBorders Full ||| Grid ||| tiled ||| Mirror tiled)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
