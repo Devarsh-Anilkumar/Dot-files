@@ -1,5 +1,5 @@
 inputbar {
-  children: [entry];
+  children: [none];
 }
 
 listview {
