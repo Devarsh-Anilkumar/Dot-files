@@ -123,18 +123,19 @@ fi
   alias up='sudo apt update'
   alias ug='sudo apt upgrade'
   alias autore='sudo apt autoremove'
-  
-  #Doom Emacs
 
+  #Doom Emacs
+  
   alias emacs='emacsclient -c -a 'emacs''
-  
-  
-#Paths
+
+
+#Export
 
   # Doom Emacs
 
-  export PATH="$HOME/.emacs.d/bin:$PATH"  
-  
+  export PATH="$HOME/.emacs.d/bin:$PATH"
+
+
 #Prompt
 
 PS1="[\w] $ "
