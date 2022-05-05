@@ -3,20 +3,35 @@
 --
 
 --
---Modules
+-- Modules
 --
 
+--Main
+
 import XMonad
-import Data.Monoid
 import System.Exit
-import XMonad.Util.SpawnOnce
+import qualified XMonad.StackSet as W
+import System.IO (hPutStrLn)
+
+-- Utilities
+
 import XMonad.Util.Run
-import XMonad.Hooks.ManageDocks
+import XMonad.Util.SpawnOnce
+
+-- Layouts
+
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Grid
 import XMonad.Layout.Spacing
 
-import qualified XMonad.StackSet as W
+-- Hooks
+
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.DynamicLog
+
+-- Data
+
+import Data.Monoid
 import qualified Data.Map        as M
 
 -- The preferred terminal program, which is used in a binding below and by
@@ -69,9 +84,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
-    
+
     -- launch Rofi
-    , ((modm,               xK_p     ), spawn "rofi -show drun")
+    , ((modm,               xK_s     ), spawn "rofi -show drun")
 
     -- launch gmrun
     --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -139,10 +154,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
- -- Run script (powermenu)
-    , ((modm .|. shiftMask, xK_p     ), spawn "/home/devarsh/Scripts/powermenu/powermenu.sh")
- 
- -- Quit xmonad
+    -- Run script (powermenu)
+    , ((modm .|. shiftMask, xK_p     ), spawn "/home/devarsh/Scripts/powermenu/powermenu.sh")  
+
+    -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
@@ -266,11 +281,11 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
 
-        spawn "killall trayer"                                     -- kill current trayer 
+        spawn "killall trayer"                                     -- kill current trayer
 
         spawnOnce "nitrogen --restore &"                           -- Draw the wallpaper
         spawnOnce "compton &"                                      -- Compositor
-        spawn ("sleep 2 && /usr/bin/trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x0a1a2a --height 18 &")                     --Launch Trayer(System tray)     
+        spawn ("sleep 2 && /usr/bin/trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x0a1a2a --height 23 &")                                                     --Launchnch Trayer (System tray)
         spawnOnce "nm-applet &"                                    -- Launch n(etwork) m(anager)-applet
         spawnOnce "volumeicon &"                                   -- Launch volumeicon
         spawnOnce "/usr/bin/emacs --daemon"                        -- Launch the emacs daemon at startup
@@ -310,8 +325,8 @@ defaults = def {
         layoutHook         = myLayout,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
-        logHook            = myLogHook,
-        startupHook        = myStartupHook
+        startupHook        = myStartupHook,
+        logHook            = myLogHook
                }
 
 -- | Finally, a copy of the default bindings in simple textual tabular format.
