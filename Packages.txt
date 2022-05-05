@@ -25,9 +25,17 @@
                | 20 |  obs                                          | apt/pacman                                                |
                | 21 |  vs-code                                      | apt/pacman                                                |
                | 22 |  vim                                          | apt/pacman                                                |
-               | 23 | libre-offoce                                  | apt/pacman                                                |
-               | 24 | light-dm                                      | apt/pacman                                                |
-               | 25 | cmatrix                                       | apt/pacman                                                |
+               | 23 |  libre-offoce                                 | apt/pacman                                                |
+               | 24 |  light-dm                                     | apt/pacman                                                |
+               | 25 |  cmatrix                                      | apt/pacman                                                |
+               | 26 |  cowsay                                       | apt/pacman                                                |
+               | 27 |  fourtune                                     | apt/pacman                                                |
+               | 28 |  spotify                                      | apt/pacman                                                |
+               | 29 |  cava                                         | apt/pacman/AUR                                            |
+               | 30 |  dunst                                        | apt/pacman                                                |
+               | 31 |  volume-icon                                  | apt/pacman                                                |
+               | 32 |  nm-applet                                    | apt/pacman                                                |
+               | 33 |  Papirus-icons                                | apt/pacman/AUR                                            |
                |____|_______________________________________________|___________________________________________________________|
 
 
