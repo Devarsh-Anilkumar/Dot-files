@@ -36,6 +36,7 @@
                | 31 |  volume-icon                                  | apt/pacman                                                |
                | 32 |  nm-applet                                    | apt/pacman                                                |
                | 33 |  Papirus-icons                                | apt/pacman/AUR                                            |
+               | 34 |  Trayer                                       | apt/pacman                                                |
                |____|_______________________________________________|___________________________________________________________|
 
 
