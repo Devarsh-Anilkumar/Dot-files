@@ -281,7 +281,7 @@ myStartupHook = do
 
         spawn "killall trayer"                                                                                 -- kill current trayer
 
-        spawnOnce "nitrogen --set-scaled //home/devarsh/Pictures/Wallpapers/1.jpg &"                           -- Draw the wallpaper
+        spawnOnce "nitrogen --restore &"                                                                       -- Draw the wallpaper
         spawnOnce "picom &"                                                                                    -- Compositor
         spawn ("sleep 2 && /usr/bin/trayer --edge top --align right --widthtype request --padding 4 --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x0a1a2a --height 23 &")                                                                                                 --Launchnch Trayer (System tray)
         spawnOnce "nm-applet &"                                                                                -- Launch n(etwork) m(anager)-apple
