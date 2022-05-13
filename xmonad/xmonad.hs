@@ -11,7 +11,6 @@
 import XMonad
 import System.Exit
 import qualified XMonad.StackSet as W
-import System.IO (hPutStrLn)
 
 -- Utilities
 
@@ -27,7 +26,6 @@ import XMonad.Layout.Spacing
 -- Hooks
 
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.DynamicLog
 
 -- Data
 
@@ -217,7 +215,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- which denotes layout choice.
 --
 myLayout = smartSpacing 10
-  $avoidStruts (noBorders Full ||| Grid ||| tiled ||| Mirror tiled)
+  $avoidStruts (noBorders Full ||| tiled ||| Grid ||| Mirror tiled)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -281,15 +279,15 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
 
-        spawn "killall trayer"                                     -- kill current trayer
+        spawn "killall trayer"                                                                                 -- kill current trayer
 
-        spawnOnce "nitrogen --restore &"                           -- Draw the wallpaper
-        spawnOnce "compton &"                                      -- Compositor
-        spawn ("sleep 2 && /usr/bin/trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x0a1a2a --height 23 &")                                                     --Launchnch Trayer (System tray)
-        spawnOnce "nm-applet &"                                    -- Launch n(etwork) m(anager)-applet
-        spawnOnce "volumeicon &"                                   -- Launch volumeicon
-        spawnOnce "/usr/bin/emacs --daemon"                        -- Launch the emacs daemon at startup
-        spawnOnce "xrandr --output HDMI-A-0 --set TearFree on &"   -- Fix screen tearing
+        spawnOnce "nitrogen --set-scaled //home/devarsh/Pictures/Wallpapers/1.jpg &"                           -- Draw the wallpaper
+        spawnOnce "picom &"                                                                                    -- Compositor
+        spawn ("sleep 2 && /usr/bin/trayer --edge top --align right --widthtype request --padding 4 --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x0a1a2a --height 23 &")                                                                                                 --Launchnch Trayer (System tray)
+        spawnOnce "nm-applet &"                                                                                -- Launch n(etwork) m(anager)-apple
+        spawnOnce "pa-applet &"                                                                                -- Launch pa-applet
+        spawnOnce "/usr/bin/emacs --daemon"                                                                    -- Launch the emacs daemon at startup
+        --spawnOnce "xrandr --output HDMI-1 --set TearFree on &"                                               -- Fix screen tearing
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
