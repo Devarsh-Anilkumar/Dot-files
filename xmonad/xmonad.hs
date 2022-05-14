@@ -43,7 +43,7 @@ myFocusFollowsMouse = False
 
 -- Whether clicking on a window to focus also passes the click to the window
 myClickJustFocuses :: Bool
-myClickJustFocuses = True
+myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
