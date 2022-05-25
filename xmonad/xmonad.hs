@@ -20,17 +20,20 @@ import XMonad.Util.SpawnOnce
 -- Layouts
 
 import XMonad.Layout.NoBorders
-import XMonad.Layout.Grid
 import XMonad.Layout.Spacing
 
 -- Hooks
 
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops (ewmh)
+import XMonad.Hooks.SetWMName
+import XMonad.Hooks.DynamicProperty
 
 -- Data
 
 import Data.Monoid
 import qualified Data.Map        as M
+import Data.Semigroup
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -70,7 +73,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#1c1c1c"
-myFocusedBorderColor = "#3c56c4"
+myFocusedBorderColor = "#1fc471"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -163,7 +166,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
-    ]
+     ]
     ++
 
     --
@@ -215,7 +218,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- which denotes layout choice.
 --
 myLayout = smartSpacing 10
-  $avoidStruts (noBorders Full ||| tiled ||| Grid ||| Mirror tiled)
+  $avoidStruts (noBorders Full ||| tiled ||| Mirror tiled)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -259,8 +262,12 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = mempty
+--myEventHook = mempty
 
+------------------------------------------------------------------------
+
+myHandleEventHook :: Event -> X All
+myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "Spotify" --> doShift ( myWorkspaces !! 8 ))
 ------------------------------------------------------------------------
 -- Status bars and logging
 
@@ -279,14 +286,16 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
 
-        spawn "killall trayer"                                                                                 -- kill current trayer
+        spawn    "killall polybar &"                                                                           -- Kill polybar
 
-        spawnOnce "nitrogen --restore &"                                                                       -- Draw the wallpaper
+        spawn     "sleep 2 && polybar &"                                                                       -- Wait 2 secs and Launch polybar
         spawnOnce "picom &"                                                                                    -- Compositor
-        spawn ("sleep 2 && /usr/bin/trayer --edge top --align right --widthtype request --padding 4 --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x0a1a2a --height 23 &")                                                                                                 --Launchnch Trayer (System tray)
-        spawnOnce "nm-applet &"                                                                                -- Launch n(etwork) m(anager)-apple
+        spawnOnce "nitrogen --restore &"                                                                       -- Draw the wallpaper
+        spawnOnce "sxhkd &"
+        spawnOnce "sleep 5 && spotify &"                                                                       -- Launch spotify
+        spawnOnce "nm-applet &"                                                                                -- Launch network-manager-applet
         spawnOnce "pa-applet &"                                                                                -- Launch pa-applet
-        spawnOnce "/usr/bin/emacs --daemon"                                                                    -- Launch the emacs daemon at startup
+        spawnOnce "/usr/bin/emacs --daemon"                                                                    -- Launch the emacs daemon
         --spawnOnce "xrandr --output HDMI-1 --set TearFree on &"                                               -- Fix screen tearing
 
 ------------------------------------------------------------------------
@@ -295,9 +304,7 @@ myStartupHook = do
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do
-  xmproc <- spawnPipe "xmobar -x 0 /home/devarsh/.config/xmobar/xmobar.config"
   xmonad $ docks defaults
-
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
 -- use the defaults defined in xmonad/XMonad/Config.hs
@@ -322,9 +329,10 @@ defaults = def {
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook,
+        --handleEventHook    = myEventHook,
         startupHook        = myStartupHook,
-        logHook            = myLogHook
+        logHook            = myLogHook,
+        handleEventHook    = myHandleEventHook
                }
 
 -- | Finally, a copy of the default bindings in simple textual tabular format.
