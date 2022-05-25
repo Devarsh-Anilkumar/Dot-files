@@ -21,7 +21,7 @@
   #alias ug='sudo apt upgrade'
   #alias autore='sudo apt autoremove'
 
-  #Doom Emacs
+  #Emacs
   
   alias emacs='emacsclient -c -a 'emacs''
 
@@ -31,6 +31,10 @@
   # Doom Emacs
 
   export PATH="$HOME/.emacs.d/bin:$PATH"
+
+  # .local/bin
+
+  export PATH="$HOME/.local/bin:$PATH"
 
 
 #Prompt
