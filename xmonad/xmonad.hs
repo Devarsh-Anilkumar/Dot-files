@@ -156,7 +156,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Run script (powermenu)
-    , ((modm .|. shiftMask, xK_p     ), spawn "/home/devarsh/Scripts/powermenu/powermenu.sh")  
+    , ((modm .|. shiftMask, xK_p     ), spawn "/home/devarsh/Scripts/powermenu/powermenu.sh")
+
+    -- Run wiki (offline arch wiki)
+    , ((modm .|. shiftMask, xK_a     ), spawn "/home/devarsh/Scripts/arch-wiki/wiki")
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -291,10 +294,8 @@ myStartupHook = do
         spawn     "sleep 2 && polybar &"                                                                       -- Wait 2 secs and Launch polybar
         spawnOnce "picom &"                                                                                    -- Compositor
         spawnOnce "nitrogen --restore &"                                                                       -- Draw the wallpaper
-        spawnOnce "sxhkd &"
-        spawnOnce "sleep 5 && spotify &"                                                                       -- Launch spotify
-        spawnOnce "nm-applet &"                                                                                -- Launch network-manager-applet
-        spawnOnce "pa-applet &"                                                                                -- Launch pa-applet
+        spawnOnce "sxhkd &"                                                                                    -- Key bindings
+        spawnOnce "flatpak run com.spotify.Client &"                                                           -- Launch spotify
         spawnOnce "/usr/bin/emacs --daemon"                                                                    -- Launch the emacs daemon
         --spawnOnce "xrandr --output HDMI-1 --set TearFree on &"                                               -- Fix screen tearing
 

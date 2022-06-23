@@ -13,6 +13,7 @@
   alias ls='ls --color=auto'
 
   #grub
+
   alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
   
   # apt

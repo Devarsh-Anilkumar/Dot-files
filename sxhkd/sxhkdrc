@@ -19,3 +19,15 @@ XF86AudioPrev
 # Next
 XF86AudioNext
     playerctl next
+
+# Volume Up
+XF86AudioRaiseVolume
+    pamixer -i 5
+
+# Volume Down
+XF86AudioLowerVolume
+    pamixer -d 5
+
+# Volume Mute
+XF86AudioMute
+    pamixer -t

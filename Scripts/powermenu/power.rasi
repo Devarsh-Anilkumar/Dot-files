@@ -1,7 +1,3 @@
-inputbar {
-  children: [none];
-}
-
 listview {
 	lines: 2;
 }

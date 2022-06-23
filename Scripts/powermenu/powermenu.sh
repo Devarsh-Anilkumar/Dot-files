@@ -11,6 +11,5 @@ chosen=$(printf "  Power Off\n  Restart" | rofi -dmenu -i -theme-str '@imp
 case "$chosen" in
 	"  Power Off") poweroff ;;
 	"  Restart") reboot ;;
-	"  Lock") slock ;;
 	*) exit 1 ;;
 esac
