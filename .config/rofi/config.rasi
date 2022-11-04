@@ -1,0 +1,17 @@
+configuration {
+  lines: 10;
+  display-drun: "Applications ";
+  display-run: "Run";
+  drun-display-format: "{icon} {name}";
+  font: "Mononoki Nerd Font 25";
+  modi: "run,drun"; 
+  show-icons: false;
+  icon-theme: "Zafiro-icons-Dark";
+  disable-history: true;
+  sidebar-mode: false;
+  terminal: "kitty";
+  display-drun:   "";
+  hide-scrollbar: true;
+}
+
+@theme "/home/devarsh/.config/rofi/themes/nord.rasi"
