@@ -5,6 +5,7 @@ export PATH
 
 # Default Apps
 export EDITOR="emacsclient"
+export VISUAL="emacsclient"
 export READER="zathura"
 export TERMINAL="kitty"
 export BROWSER="firefox"
