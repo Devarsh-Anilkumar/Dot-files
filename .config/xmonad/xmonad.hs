@@ -89,6 +89,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch Rofi
     , ((modm,               xK_s     ), spawn "rofi -show drun")
 
+
+    -- launch Gnome screenshot
+    , ((modm .|. shiftMask, xK_s     ), spawn "gnome-screenshot -i")
+
     -- launch gmrun
     --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
