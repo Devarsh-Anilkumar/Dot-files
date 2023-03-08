@@ -93,6 +93,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch Gnome screenshot
     , ((modm .|. shiftMask, xK_s     ), spawn "gnome-screenshot -i")
 
+    -- launch Greenclip
+    , ((modm,               xK_c     ), spawn "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'")
+
     -- launch gmrun
     --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
@@ -301,7 +304,8 @@ myStartupHook = do
         spawnOnce "sxhkd &"                                                                                    -- Key bindings
         spawnOnce "dunst &"                                                                                    -- Launch dunst (notification daemon)
         spawnOnce "spotify &"                                                                                  -- Launch spotify
-        spawnOnce "/usr/bin/emacs --daemon"                                                                    -- Launch the emacs daemon
+        spawnOnce "/usr/bin/emacs --daemon &"                                                                  -- Launch the emacs daemon
+        spawnOnce "greenclip daemon  &"                                                                        -- Launch Greenclip daemon (clipboard)
         --spawnOnce "xrandr --output HDMI-1 --set TearFree on &"                                               -- Fix screen tearing
 
 ------------------------------------------------------------------------
