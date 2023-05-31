@@ -306,6 +306,7 @@ myStartupHook = do
         spawnOnce "spotify &"                                                                                  -- Launch spotify
         spawnOnce "/usr/bin/emacs --daemon &"                                                                  -- Launch the emacs daemon
         spawnOnce "greenclip daemon  &"                                                                        -- Launch Greenclip daemon (clipboard)
+        spawnOnce "udiskie -s &"
         --spawnOnce "xrandr --output HDMI-1 --set TearFree on &"                                               -- Fix screen tearing
 
 ------------------------------------------------------------------------
