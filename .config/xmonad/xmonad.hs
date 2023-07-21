@@ -278,6 +278,7 @@ myManageHook = composeAll
 
 myHandleEventHook :: Event -> X All
 myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "Spotify" --> doShift ( myWorkspaces !! 8 ))
+
 ------------------------------------------------------------------------
 -- Status bars and logging
 
@@ -307,6 +308,7 @@ myStartupHook = do
         spawnOnce "/usr/bin/emacs --daemon &"                                                                  -- Launch the emacs daemon
         spawnOnce "greenclip daemon  &"                                                                        -- Launch Greenclip daemon (clipboard)
         spawnOnce "udiskie -s &"
+	spawnOnce "discord --start-minimized"								       -- Start Discord 
         --spawnOnce "xrandr --output HDMI-1 --set TearFree on &"                                               -- Fix screen tearing
 
 ------------------------------------------------------------------------
