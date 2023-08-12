@@ -1,11 +1,11 @@
 typeset -U PATH path
 
-path=(~/.local/bin ~/.emacs.d/bin $path)
+path=(~/.local/bin $path)
 export PATH
 
 # Default Apps
-export EDITOR="emacsclient"
-export VISUAL="emacsclient"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export READER="zathura"
 export TERMINAL="kitty"
 export BROWSER="firefox"

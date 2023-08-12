@@ -51,7 +51,7 @@ SPACESHIP_JOBS_SHOW=false
   alias ls='ls --color=auto'
 
   # grub
-  alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+  alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
   
   # apt
   # alias up='sudo apt update'
@@ -59,7 +59,7 @@ SPACESHIP_JOBS_SHOW=false
   # alias autore='sudo apt autoremove'
 
   # Emacs
-  alias emacs='emacsclient -c -a 'emacs''
+  #alias emacs='emacsclient -c -a 'emacs''
 
   # Gxmessage
   alias xmessage='gxmessage'
