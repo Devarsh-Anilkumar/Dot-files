@@ -10,8 +10,8 @@ configuration {
   disable-history: true;
   sidebar-mode: false;
   terminal: "kitty";
-  display-drun:   "";
+  display-drun:"󰀻";
   hide-scrollbar: true;
 }
 
-@theme "/home/devarsh/.config/rofi/themes/nord.rasi"
+@theme "/home/devarsh/.config/rofi/themes/theme.rasi"
