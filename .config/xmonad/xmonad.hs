@@ -105,8 +105,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch GUI file manager (pcmanfm)
     , ((modm .|. shiftMask, xK_f     ), spawn "pcmanfm")
 
-    -- launch emacs client
-    , ((modm,               xK_d     ), spawn "emacsclient -c -a 'emacs'")
+    -- launch nvim
+    , ((modm,               xK_d     ), spawn "kitty nvim")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
@@ -305,10 +305,10 @@ myStartupHook = do
         spawnOnce "sxhkd &"                                                                                    -- Key bindings
         spawnOnce "dunst &"                                                                                    -- Launch dunst (notification daemon)
         spawnOnce "spotify &"                                                                                  -- Launch spotify
-        spawnOnce "/usr/bin/emacs --daemon &"                                                                  -- Launch the emacs daemon
+        -- spawnOnce "/usr/bin/emacs --daemon &"                                                               -- Launch the emacs daemon
         spawnOnce "greenclip daemon  &"                                                                        -- Launch Greenclip daemon (clipboard)
-        spawnOnce "udiskie -s &"
-	spawnOnce "discord --start-minimized"								       -- Start Discord 
+        spawnOnce "udiskie -s &"																			   -- Launch udskie
+        spawnOnce "discord --start-minimized"								       							   -- Start Discord 
         --spawnOnce "xrandr --output HDMI-1 --set TearFree on &"                                               -- Fix screen tearing
 
 ------------------------------------------------------------------------
