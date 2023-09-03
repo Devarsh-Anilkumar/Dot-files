@@ -6,30 +6,20 @@
 -- Modules
 --
 
---Main
-
 import XMonad
 import System.Exit
 import qualified XMonad.StackSet as W
 
--- Utilities
-
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 
--- Layouts
-
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
-
--- Hooks
 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.DynamicProperty
-
--- Data
 
 import Data.Monoid
 import qualified Data.Map        as M
@@ -308,7 +298,7 @@ myStartupHook = do
         -- spawnOnce "/usr/bin/emacs --daemon &"                                                               -- Launch the emacs daemon
         spawnOnce "greenclip daemon  &"                                                                        -- Launch Greenclip daemon (clipboard)
         spawnOnce "udiskie -s &"																			   -- Launch udskie
-        spawnOnce "discord --start-minimized"								       							   -- Start Discord 
+        spawnOnce "discord --start-minimized"								       							   -- Launch Discord 
         --spawnOnce "xrandr --output HDMI-1 --set TearFree on &"                                               -- Fix screen tearing
 
 ------------------------------------------------------------------------
