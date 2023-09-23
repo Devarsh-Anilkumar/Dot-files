@@ -63,7 +63,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#181A20"
-myFocusedBorderColor = "#E69A74"
+myFocusedBorderColor = "#88c0d0"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.

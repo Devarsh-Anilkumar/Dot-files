@@ -7,7 +7,7 @@
 
 	4: #d8dee9;
 	5: #e5e9f0;
-	6: #eceff4;
+	6: #88c0d0;
 
 	7: #8fbcbb;
 	8: #88c0d0;
@@ -20,13 +20,13 @@
 	14: #a3be8c;
 	15: #b48ead;
 
-    foreground:  @9;
+    foreground:  @6;
     backlight:   #ccffeedd;
     background-color:  transparent;
     
-    highlight:     underline bold #eceff4;
+    highlight:     underline bold #88c0d0;
 
-    transparent: rgba(24,26,32,0);
+    transparent: rgba(136,192,208,0);
 }
 
 window {
@@ -57,13 +57,13 @@ message {
 }
 
 inputbar {
-    color: @9;
+    color: @6;
     padding: 11px;
-    background-color: #15191A;
+    background-color: #2e3440;
 
     border: 1px;
     border-radius:  6px 6px 0px 0px;
-    border-color: @9;
+    border-color: @6;
 }
 
 entry, prompt, case-indicator {
@@ -78,9 +78,9 @@ prompt {
 listview {
     padding: 8px;
     border-radius: 0px 0px 6px 6px;
-    border-color: @9;
+    border-color: @6;
     border: 0px 1px 1px 1px;
-    background-color: rgba(21,25,26,0.9);
+    background-color: rgba(46,52,64,1);
     dynamic: false;
 }
 
@@ -90,11 +90,11 @@ element {
     border-radius: 4px;
     background-color: transparent;
     color: @foreground;
-    text-color: rgb(230, 154, 116);
+    text-color: rgb(136, 192, 208);
 }
 
 element selected.normal {
-	background-color: @9;
+	background-color: @6;
 	text-color: #2e3440;
 }
 
