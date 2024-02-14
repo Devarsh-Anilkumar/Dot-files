@@ -19,7 +19,7 @@ import XMonad.Layout.Spacing
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.SetWMName
-import XMonad.Hooks.DynamicProperty
+import XMonad.Hooks.OnPropertyChange
 
 import Data.Monoid
 import qualified Data.Map        as M
@@ -267,7 +267,7 @@ myManageHook = composeAll
 ------------------------------------------------------------------------
 
 myHandleEventHook :: Event -> X All
-myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "Spotify" --> doShift ( myWorkspaces !! 8 ))
+myHandleEventHook = onXPropertyChange "WM_NAME" (title =? "Spotify" --> doShift ( myWorkspaces !! 8 ))
 
 ------------------------------------------------------------------------
 -- Status bars and logging
